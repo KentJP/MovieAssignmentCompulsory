@@ -62,35 +62,5 @@ namespace MovieRatingAssignment.Core.ApplicationService.Service
         {
             throw new NotImplementedException();
         }
-
-        List<MovieReview> IMovieReviewService.getMostActiveReviewers()
-        {
-            throw new NotImplementedException();
-        }
-
-        List<MovieReview> IMovieReviewService.getMostActiveReviewers()
-        {
-            throw new NotImplementedException();
-        }
-
-        List<MovieReview> IMovieReviewService.getMoviesRatedByReviewers(int id)
-        {
-            throw new NotImplementedException();
-        }
-
-        List<MovieReview> IMovieReviewService.getMoviesRatedByReviewers(int id)
-        {
-            throw new NotImplementedException();
-        }
-
-        List<MovieReview> IMovieReviewService.getTopMoviesFromInput(int value)
-        {
-            throw new NotImplementedException();
-        }
-
-        List<MovieReview> IMovieReviewService.getTopMoviesFromInput(int value)
-        {
-            throw new NotImplementedException();
-        }
     }
 }
