@@ -21,7 +21,7 @@ namespace XUnitTestMovieRating
             new MovieReview(){Reviewer = 4, Movie = 3, Grade = 2, Date = new DateTime(2018, 03, 20)},
             new MovieReview(){Reviewer = 4, Movie = 2, Grade = 2, Date = new DateTime(2016, 12, 20)},
             new MovieReview(){Reviewer = 5, Movie = 5, Grade = 5, Date = new DateTime(2017, 12, 20)},
-        }
+        };
         
         [Fact]
         public void Test1()
