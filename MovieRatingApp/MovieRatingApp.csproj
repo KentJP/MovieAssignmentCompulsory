@@ -1,16 +1,13 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
+    <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp2.1</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
-  </ItemGroup>
-
-  <ItemGroup>
     <ProjectReference Include="..\MovieRatingAssignment.Core.Entity\MovieRatingAssignment.Core.Entity.csproj" />
-    <ProjectReference Include="..\MovieRatingAssignment.Core\MovieRatingAssignment.Core.csproj" />
+    <ProjectReference Include="..\MovieRatingAssignment.Infrastructure\MovieRatingAssignment.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>
