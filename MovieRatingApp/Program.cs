@@ -1,7 +1,7 @@
 ﻿using MovieRatingAssignment.Core.Entity;
 using MovieRatingAssignment.Infrastructure;
-using MovieRatingAssignment.Infrastructure.Repository;
 using System;
+using System.Collections.Generic;
 
 namespace MovieRatingApp
 {
@@ -9,7 +9,7 @@ namespace MovieRatingApp
     {
         static void Main(string[] args)
         {
-            JsonRead.InitJsonRead();
+    
         }
     }
 }

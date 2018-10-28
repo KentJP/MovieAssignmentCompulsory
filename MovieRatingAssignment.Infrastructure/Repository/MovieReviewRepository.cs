@@ -1,70 +1,84 @@
-﻿using MovieRatingAssignment.Core.DomainService;
-using MovieRatingAssignment.Core.Entity;
-using Newtonsoft.Json;
+﻿using MovieRatingAssignment.Core.Entity;
 using System;
 using System.Collections.Generic;
-using System.Diagnostics;
-using System.IO;
+using System.Linq;
 using System.Text;
 
 namespace MovieRatingAssignment.Infrastructure.Repository
 {
-    public class MovieReviewRepository : IMovieReviewRepository
+    public class MovieReviewRepository
     {
-  
-        public int getAmountOfSpecificRatingForMovie(int id, int grade)
+        private JsonRead _jsonRead;
+
+        public MovieReviewRepository(JsonRead jsonRead)
         {
-            throw new NotImplementedException();
+            _jsonRead = jsonRead;
         }
 
-        public double getAverageRateFromReviewer(int id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public double getAverageRatingForMovie(int id)
-        {
-            throw new NotImplementedException();
-        }
-
-        public List<int> getIdsFromHighestRatedMovies()
-        {
-            throw new NotImplementedException();
-        }
-
-        public List<MovieReview> getMostActiveReviewers()
-        {
-            throw new NotImplementedException();
-        }
-
-        public List<MovieReview> getMoviesRatedByReviewers(int id)
-        {
-            throw new NotImplementedException();
-        }
-
+        //1.
         public int getNumberOfReviewsFromReviewer(int id)
         {
-            throw new NotImplementedException();
+            return _jsonRead.ratings.Where(mr => mr.Reviewer == id).Count();
         }
 
+        //2.
+        public double getAverageRateFromReviewer(int id)
+        {
+            return 0;
+        }
+
+        //3.
         public int getNumberOfReviewsWithReviewValueFromReviewer(int id, int grade)
         {
-            throw new NotImplementedException();
+            return 0;
         }
 
+        //4.
         public int getReviewAmountForMovie(int id)
         {
-            throw new NotImplementedException();
+            return 0;
         }
 
-        public List<int> getReviewersHavingRatedSpecificMovie(int id)
+        //5.
+        public double getAverageRatingForMovie(int id)
         {
-            throw new NotImplementedException();
+            return 0;
         }
 
+        //6.
+        public int getAmountOfSpecificRatingForMovie(int id, int grade)
+        {
+            return 0;
+        }
+
+        //7.
+        public List<int> getIdsFromHighestRatedMovies()
+        {
+            return null;
+        }
+
+        //8.
+        public List<MovieReview> getMostActiveReviewers()
+        {
+            return null;
+        }
+
+        //9.
         public List<MovieReview> getTopMoviesFromInput(int value)
         {
-            throw new NotImplementedException();
+            return null;
+        }
+
+        //10.
+        public List<MovieReview> getMoviesRatedByReviewers(int id)
+        {
+            return null;
+        }
+
+        //11.
+        public List<int> getReviewersHavingRatedSpecificMovie(int id)
+        {
+            return null;
         }
     }
 }

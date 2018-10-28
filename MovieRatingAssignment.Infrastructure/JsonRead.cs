@@ -10,18 +10,20 @@ namespace MovieRatingAssignment.Infrastructure
 {
     public class JsonRead
     {
-        private const string FILE_NAME = "ratings.json";  // Change the path
-        public static List<MovieReview> ratings = new List<MovieReview>();
+        public List<MovieReview> ratings = new List<MovieReview>();
 
-        public static void InitJsonRead()
+        public JsonRead(string filePath)
         {
-            //   List<MovieReview> ratings = new List<MovieReview>();
+            if (!String.IsNullOrEmpty(filePath))
+            {
+                InitJsonRead(filePath);
+            }
+        }
 
-            Console.Write("Converting Json file to objects... ");
+        private void InitJsonRead(string filePath)
+        {
 
-            Stopwatch sw = Stopwatch.StartNew();
-
-            using (StreamReader streamReader = new StreamReader(FILE_NAME))
+            using (StreamReader streamReader = new StreamReader(filePath))
             using (JsonTextReader reader = new JsonTextReader(streamReader))
             {
                 var serializer = new JsonSerializer();
@@ -41,15 +43,9 @@ namespace MovieRatingAssignment.Infrastructure
                     Console.WriteLine(e.Message);
                 }
             }
-
-            sw.Stop();
-            Console.WriteLine("Done. Time = {0:f4} sec.", sw.ElapsedMilliseconds / 1000d);
-            Console.ReadLine();
-
-
         }
 
-        private static MovieReview ReadOneMovieRating(JsonTextReader reader)
+        private MovieReview ReadOneMovieRating(JsonTextReader reader)
         {
             MovieReview m = new MovieReview();
             for (int i = 0; i < 4; i++)
@@ -66,6 +62,8 @@ namespace MovieRatingAssignment.Infrastructure
             }
             return m;
         }
+
+
 
     }
 }

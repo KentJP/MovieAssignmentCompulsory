@@ -7,15 +7,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CORE", "CORE", "{47CCA928-5
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{7E0358DE-F307-42B2-9BA9-EB85045B5105}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MovieRatingAssignment.Core", "MovieRatingAssignment.Core\MovieRatingAssignment.Core.csproj", "{20FA8CAE-6042-46AC-959A-214F655DD5B6}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MovieRatingAssignment.Core.Entity", "MovieRatingAssignment.Core.Entity\MovieRatingAssignment.Core.Entity.csproj", "{06636EEB-A720-4CF0-8A9C-2D2D8B4AF621}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MovieRatingAssignment.Infrastructure", "MovieRatingAssignment.Infrastructure\MovieRatingAssignment.Infrastructure.csproj", "{4C4F7797-BB2D-4868-AF01-93023FE85615}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MovieRatingApp", "MovieRatingApp\MovieRatingApp.csproj", "{645D3526-1663-4AB9-8141-5D8202EA33A8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MovieRatingApp", "MovieRatingApp\MovieRatingApp.csproj", "{645D3526-1663-4AB9-8141-5D8202EA33A8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XUnitTestMovieRating", "XUnitTestMovieRating\XUnitTestMovieRating.csproj", "{889478F0-1908-4CA2-AA61-B7A93D192055}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XUnitTestMovieRating", "XUnitTestMovieRating\XUnitTestMovieRating.csproj", "{889478F0-1908-4CA2-AA61-B7A93D192055}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +21,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{20FA8CAE-6042-46AC-959A-214F655DD5B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{20FA8CAE-6042-46AC-959A-214F655DD5B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{20FA8CAE-6042-46AC-959A-214F655DD5B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{20FA8CAE-6042-46AC-959A-214F655DD5B6}.Release|Any CPU.Build.0 = Release|Any CPU
 		{06636EEB-A720-4CF0-8A9C-2D2D8B4AF621}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{06636EEB-A720-4CF0-8A9C-2D2D8B4AF621}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{06636EEB-A720-4CF0-8A9C-2D2D8B4AF621}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -48,7 +42,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
-		{20FA8CAE-6042-46AC-959A-214F655DD5B6} = {47CCA928-577F-4C7A-801C-BDA109D9819F}
 		{06636EEB-A720-4CF0-8A9C-2D2D8B4AF621} = {47CCA928-577F-4C7A-801C-BDA109D9819F}
 		{4C4F7797-BB2D-4868-AF01-93023FE85615} = {7E0358DE-F307-42B2-9BA9-EB85045B5105}
 	EndGlobalSection

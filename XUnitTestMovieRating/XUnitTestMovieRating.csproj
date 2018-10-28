@@ -15,8 +15,6 @@
   <ItemGroup>
     <ProjectReference Include="..\MovieRatingApp\MovieRatingApp.csproj" />
     <ProjectReference Include="..\MovieRatingAssignment.Core.Entity\MovieRatingAssignment.Core.Entity.csproj" />
-    <ProjectReference Include="..\MovieRatingAssignment.Core\MovieRatingAssignment.Core.csproj" />
-    <ProjectReference Include="..\MovieRatingAssignment.Infrastructure\MovieRatingAssignment.Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>
