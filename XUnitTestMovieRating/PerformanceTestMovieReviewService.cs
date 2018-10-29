@@ -23,5 +23,65 @@ namespace XUnitTestMovieRating
 
             Assert.True(sw.ElapsedMilliseconds < 4000);
         }
+
+        //2
+        [Fact]
+        public void WithinTimeLimitTestForGetAverageRateFromReviewer()
+        {
+            Stopwatch sw = new Stopwatch();
+            sw.Start();
+            double result = MRR.getAverageRateFromReviewer(1);
+            sw.Stop();
+
+            Assert.True(sw.ElapsedMilliseconds < 4000);
+        }   
+        
+        //3
+        [Fact]
+        public void WithinTimeLimitTestForGetNumberOfReviewsWithReviewValueFromReviewer()
+        {
+            Stopwatch sw = new Stopwatch();
+            sw.Start();
+            int result = MRR.getNumberOfReviewsWithReviewValueFromReviewer(1,4);
+            sw.Stop();
+
+            Assert.True(sw.ElapsedMilliseconds < 4000);
+        }
+
+        //4
+        [Fact]
+        public void WithinTimeLimitTestForGetReviewAmountForMovie()
+        {
+            Stopwatch sw = new Stopwatch();
+            sw.Start();
+            int result = MRR.getReviewAmountForMovie(30878);
+            sw.Stop();
+
+            Assert.True(sw.ElapsedMilliseconds < 4000);
+        }      
+        
+        //5
+        [Fact]
+        public void WithinTimeLimitTestForGetAverageRatingForMovie()
+        {
+            Stopwatch sw = new Stopwatch();
+            sw.Start();
+            double result = MRR.getAverageRatingForMovie(30878);
+            sw.Stop();
+
+            Assert.True(sw.ElapsedMilliseconds < 4000);
+        }   
+        
+        //6
+        [Fact]
+        public void WithinTimeLimitTestForGetAmountOfSpecificRatingForMovie()
+        {
+            Stopwatch sw = new Stopwatch();
+            sw.Start();
+            int result = MRR.getAmountOfSpecificRatingForMovie(1488844, 3);
+            sw.Stop();
+
+            Assert.True(sw.ElapsedMilliseconds < 4000);
+        }
     }
 }

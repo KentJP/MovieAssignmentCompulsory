@@ -24,37 +24,38 @@ namespace MovieRatingAssignment.Infrastructure.Repository
         //2.
         public double getAverageRateFromReviewer(int id)
         {
-            return 0;
+            return _jsonRead.ratings.Where(mr => mr.Reviewer == id).Average(mr => mr.Grade);
         }
 
         //3.
         public int getNumberOfReviewsWithReviewValueFromReviewer(int id, int grade)
         {
-            return 0;
+            return _jsonRead.ratings.Where(mr => mr.Reviewer == id && mr.Grade == grade).Count();
         }
 
         //4.
         public int getReviewAmountForMovie(int id)
         {
-            return 0;
+            return _jsonRead.ratings.Where(mr => mr.Movie == id).Count();
         }
 
         //5.
         public double getAverageRatingForMovie(int id)
         {
-            return 0;
+            return _jsonRead.ratings.Where(mr => mr.Movie == id).Average(mr => mr.Grade);
         }
 
         //6.
         public int getAmountOfSpecificRatingForMovie(int id, int grade)
         {
-            return 0;
+            return _jsonRead.ratings.Where(mr => mr.Movie == id && mr.Grade == grade).Count();
         }
 
         //7.
         public List<int> getIdsFromHighestRatedMovies()
         {
-            return null;
+            //   return _jsonRead.ratings.Where(mr => mr.Grade ==5).
+                return null;
         }
 
         //8.
