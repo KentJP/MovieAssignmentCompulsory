@@ -96,8 +96,44 @@ namespace XUnitTestMovieRating
         [Fact]
         public void TestForCorrectTopIdWithHighestScore()
         {
+            List<int> top5 = MRR.getIdsFromHighestRatedMovies();
+
+            if (top5[0] == 822109 && top5[1] == 2207774 && top5[2] == 30878 && top5[3] == 662870 && top5[4] == 337541)
+            {
+                Assert.True(true);
+            }
+        }
+
+        //TODO
+        //Lav en ordentlig test btw... 
+        //8
+        [Fact]
+        public void TestForCorrectAmountOfMostActiveReviewers()
+        {           
+            List<int> fiveMostActiveReviewers = MRR.getMostActiveReviewers();
+            if(fiveMostActiveReviewers.Contains(1) && fiveMostActiveReviewers.Contains(2) && fiveMostActiveReviewers.Contains(3) && fiveMostActiveReviewers.Contains(4) && fiveMostActiveReviewers.Contains(5))
+            {
+                Assert.True(true);
+            }
+        }   
+        
+        //TODO
+        //Lav en ordentlig test btw... 
+        //9
+        [Fact]
+        public void TestForCorrectTopMoviesListFromAverageScore()
+        {
+            List<int> topMoviesFromAverageScore = MRR.getTopMoviesFromInput(5);
 
         }
+
+        //TODO
+        //Lav en ordentlig test btw...
+        //10
+
+        //TODO
+        //Lav en ordentlig test btw...
+        //11
 
 
 

@@ -1,4 +1,5 @@
-﻿using MovieRatingAssignment.Infrastructure;
+﻿using MovieRatingAssignment.Core.Entity;
+using MovieRatingAssignment.Infrastructure;
 using MovieRatingAssignment.Infrastructure.Repository;
 using System;
 using System.Collections.Generic;
@@ -79,6 +80,66 @@ namespace XUnitTestMovieRating
             Stopwatch sw = new Stopwatch();
             sw.Start();
             int result = MRR.getAmountOfSpecificRatingForMovie(1488844, 3);
+            sw.Stop();
+
+            Assert.True(sw.ElapsedMilliseconds < 4000);
+        }
+
+        //7
+        [Fact]
+        public void WithinTimeLimitTestGetIdsFromHighestRatedMovies()
+        {
+            Stopwatch sw = new Stopwatch();
+            sw.Start();
+            List<int> result = MRR.getIdsFromHighestRatedMovies();
+            sw.Stop();
+
+            Assert.True(sw.ElapsedMilliseconds < 4000);
+        }      
+        
+        //8
+        [Fact]
+        public void WithinTimeLimitTestGetMostActiveReviewers()
+        {
+            Stopwatch sw = new Stopwatch();
+            sw.Start();
+            List<int> result = MRR.getMostActiveReviewers();
+            sw.Stop();
+
+            Assert.True(sw.ElapsedMilliseconds < 4000);
+        }      
+        
+        //9
+        [Fact]
+        public void WithinTimeLimitTestGetTopMoviesFromInput()
+        {
+            Stopwatch sw = new Stopwatch();
+            sw.Start();
+            List<int> result = MRR.getTopMoviesFromInput(5);
+            sw.Stop();
+
+            Assert.True(sw.ElapsedMilliseconds < 4000);
+        }      
+        
+        //10
+        [Fact]
+        public void WithinTimeLimitTestGetMoviesRatedByReviewers()
+        {
+            Stopwatch sw = new Stopwatch();
+            sw.Start();
+            List<MovieReview> list = MRR.getMoviesRatedByReviewers(1);
+            sw.Stop();
+
+            Assert.True(sw.ElapsedMilliseconds < 4000);
+        }      
+        
+        //11
+        [Fact]
+        public void WithinTimeLimitTestGetReviewersHavingRatedSpecificMovie()
+        {
+            Stopwatch sw = new Stopwatch();
+            sw.Start();
+            List<MovieReview> list = MRR.getReviewersHavingRatedSpecificMovie(1488844);
             sw.Stop();
 
             Assert.True(sw.ElapsedMilliseconds < 4000);

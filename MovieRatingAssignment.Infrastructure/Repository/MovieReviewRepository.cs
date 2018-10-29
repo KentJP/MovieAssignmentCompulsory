@@ -54,32 +54,31 @@ namespace MovieRatingAssignment.Infrastructure.Repository
         //7.
         public List<int> getIdsFromHighestRatedMovies()
         {
-            //   return _jsonRead.ratings.Where(mr => mr.Grade ==5).
-                return null;
+            return _jsonRead.ratings.Where(mr => mr.Grade == 5).GroupBy(mr => mr.Movie).OrderByDescending(g => g.Count()).Take(5).Select(g => g.Key).ToList();
         }
 
         //8.
-        public List<MovieReview> getMostActiveReviewers()
+        public List<int> getMostActiveReviewers()
         {
-            return null;
+            return _jsonRead.ratings.GroupBy(mr => mr.Reviewer).OrderByDescending(g => g.Count()).Take(5).Select(g => g.Key).ToList();
         }
 
         //9.
-        public List<MovieReview> getTopMoviesFromInput(int value)
+        public List<int> getTopMoviesFromInput(int value)
         {
-            return null;
+            return _jsonRead.ratings.GroupBy(mr => mr.Movie).OrderByDescending(g => g.Average(r => r.Grade)).Take(value).Select(g => g.Key).ToList();
         }
 
         //10.
         public List<MovieReview> getMoviesRatedByReviewers(int id)
         {
-            return null;
+            return _jsonRead.ratings.Where(mr => mr.Reviewer == id).OrderByDescending(mr => mr.Grade).ThenByDescending(mr => mr.Date).ToList();
         }
 
         //11.
-        public List<int> getReviewersHavingRatedSpecificMovie(int id)
+        public List<MovieReview> getReviewersHavingRatedSpecificMovie(int id)
         {
-            return null;
+            return _jsonRead.ratings.Where(mr => mr.Movie == id).OrderByDescending(mr => mr.Grade).ThenByDescending(mr => mr.Date).ToList();
         }
     }
 }
