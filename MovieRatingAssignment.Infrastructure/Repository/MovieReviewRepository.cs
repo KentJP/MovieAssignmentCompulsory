@@ -6,7 +6,7 @@ using System.Text;
 
 namespace MovieRatingAssignment.Infrastructure.Repository
 {
-    public class MovieReviewRepository
+    public class MovieReviewRepository :IMovieReviewRepository
     {
         private JsonRead _jsonRead;
 
