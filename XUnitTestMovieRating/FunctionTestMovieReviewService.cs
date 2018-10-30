@@ -135,8 +135,7 @@ namespace XUnitTestMovieRating
 
         }
 
-        //TODO
-        //Lav en ordentlig test btw...
+ 
         //11
         [Theory]
         [InlineData(337541, 4)]
