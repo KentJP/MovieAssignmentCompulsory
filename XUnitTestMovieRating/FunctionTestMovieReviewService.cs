@@ -96,12 +96,9 @@ namespace XUnitTestMovieRating
         [Fact]
         public void TestForCorrectTopIdWithHighestScore()
         {
-            List<int> top5 = MRR.getIdsFromHighestRatedMovies();
+            List<int> topMovies = MRR.getIdsFromHighestRatedMovies();
 
-            if (top5[0] == 822109 && top5[1] == 2207774 && top5[2] == 30878 && top5[3] == 662870 && top5[4] == 337541)
-            {
-                Assert.True(true);
-            }
+            Assert.True(topMovies[0] == 822109);
         }
 
         //TODO

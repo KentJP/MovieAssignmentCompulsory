@@ -13,9 +13,9 @@ namespace MovieRatingApp
 
              MovieReviewRepository MRR = new MovieReviewRepository(new JsonRead("TestRatings.json"));
 
-            List<MovieReview> list = MRR.getReviewersHavingRatedSpecificMovie(1488844);
+            List<int> list = MRR.getMostActiveReviewers();
 
-            foreach (MovieReview item in list)
+            foreach (var item in list)
             {
                 Console.WriteLine(item.ToString());
             }

@@ -54,13 +54,15 @@ namespace MovieRatingAssignment.Infrastructure.Repository
         //7.
         public List<int> getIdsFromHighestRatedMovies()
         {
-            return _jsonRead.ratings.Where(mr => mr.Grade == 5).GroupBy(mr => mr.Movie).OrderByDescending(g => g.Count()).Take(5).Select(g => g.Key).ToList();
+            var maxVal = _jsonRead.ratings.Where(mr => mr.Grade == 5).GroupBy(mr => mr.Movie).Max(g => g.Count());
+            return _jsonRead.ratings.Where(mr => mr.Grade == 5).GroupBy(mr => mr.Movie).Where(g => g.Count() == maxVal).Select(k => k.Key).ToList();
         }
 
         //8.
         public List<int> getMostActiveReviewers()
         {
-            return _jsonRead.ratings.GroupBy(mr => mr.Reviewer).OrderByDescending(g => g.Count()).Take(5).Select(g => g.Key).ToList();
+            var maxVal = _jsonRead.ratings.GroupBy(mr => mr.Reviewer).Max(r => r.Count());
+            return _jsonRead.ratings.GroupBy(mr => mr.Reviewer).Where(r => r.Count() == maxVal).Select(r => r.Key).ToList();
         }
 
         //9.
