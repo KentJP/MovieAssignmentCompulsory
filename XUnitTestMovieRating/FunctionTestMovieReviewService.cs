@@ -30,8 +30,8 @@ namespace XUnitTestMovieRating
         [InlineData(1,3.6)]
         [InlineData(2,3.9)]
         [InlineData(3,3.9)]
-        [InlineData(4,3.6)]
-        [InlineData(5,3.5)]
+        [InlineData(4,3.2)]
+        [InlineData(5,3)]
         public void TestForCorrectAverageRateFromReviewer(int input, double result)
         {
             double averageRate = MRR.getAverageRateFromReviewer(input);
@@ -101,36 +101,52 @@ namespace XUnitTestMovieRating
             Assert.True(topMovies[0] == 822109);
         }
 
-        //TODO
-        //Lav en ordentlig test btw... 
+
         //8
         [Fact]
         public void TestForCorrectAmountOfMostActiveReviewers()
         {           
             List<int> fiveMostActiveReviewers = MRR.getMostActiveReviewers();
-            if(fiveMostActiveReviewers.Contains(1) && fiveMostActiveReviewers.Contains(2) && fiveMostActiveReviewers.Contains(3) && fiveMostActiveReviewers.Contains(4) && fiveMostActiveReviewers.Contains(5))
-            {
-                Assert.True(true);
-            }
+
+            Assert.True(fiveMostActiveReviewers.Contains(1) && fiveMostActiveReviewers.Contains(2) && fiveMostActiveReviewers.Contains(3) && fiveMostActiveReviewers.Contains(4) && fiveMostActiveReviewers.Contains(5));
+
         }   
-        
-        //TODO
-        //Lav en ordentlig test btw... 
+       
         //9
         [Fact]
         public void TestForCorrectTopMoviesListFromAverageScore()
         {
             List<int> topMoviesFromAverageScore = MRR.getTopMoviesFromInput(5);
 
+            Assert.True(topMoviesFromAverageScore[0] == 2207774 && topMoviesFromAverageScore[1] == 662870 && topMoviesFromAverageScore[2] == 885013 && topMoviesFromAverageScore[3] == 822109 && topMoviesFromAverageScore[4] == 1842128);
+
+        }
+
+        //10
+        [Theory]
+        [InlineData(1, 10)]
+        [InlineData(2, 10)]
+        [InlineData(3, 10)]
+        public void TestgetMoviesRatedByReviewers(int id, int result)
+        {
+            List<MovieReview> sortedMovies = MRR.getMoviesRatedByReviewers(id);
+
+            Assert.Equal(sortedMovies.Count, result);
+
         }
 
         //TODO
         //Lav en ordentlig test btw...
-        //10
-
-        //TODO
-        //Lav en ordentlig test btw...
         //11
+        [Theory]
+        [InlineData(337541, 4)]
+        [InlineData(808731, 3)]
+        public void TestgetReviewersHavingRatedSpecificMovie(int id, int result)
+        {
+            List<MovieReview> reviewers = MRR.getReviewersHavingRatedSpecificMovie(id);
+
+            Assert.Equal(reviewers[0].Reviewer, result);
+        }
 
 
 

@@ -13,9 +13,9 @@ namespace MovieRatingApp
 
              MovieReviewRepository MRR = new MovieReviewRepository(new JsonRead("TestRatings.json"));
 
-            List<int> list = MRR.getMostActiveReviewers();
+            List<int> topMoviesFromAverageScore = MRR.getTopMoviesFromInput(5);
 
-            foreach (var item in list)
+            foreach (var item in topMoviesFromAverageScore)
             {
                 Console.WriteLine(item.ToString());
             }
